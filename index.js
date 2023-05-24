@@ -5,7 +5,7 @@ const app = express();
 app.use(express.json());
 // require("./startup/logging");
 require("./startup/route")(app);
-require("./startup/config")();
+// require("./startup/config")();
 require("./startup/db")();
 
 app.get("/", (req, res) => {

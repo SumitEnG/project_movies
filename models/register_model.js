@@ -2,6 +2,7 @@ const mongoose = require("mongoose");
 const Joi = require("joi");
 const config = require("config");
 const jwt = require("jsonwebtoken");
+require("dotenv").config();
 
 const registerSchema = new mongoose.Schema({
   name: {
@@ -29,7 +30,7 @@ const registerSchema = new mongoose.Schema({
 registerSchema.methods.generateAuthToken = function () {
   const token = jwt.sign(
     { _id: this._id, isAdmin: this.isAdmin },
-    config.get("jwtPrivateKey")
+    process.env.jwtPrivateKey
   );
   return token;
 };
