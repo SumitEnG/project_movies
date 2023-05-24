@@ -4,7 +4,6 @@ const auth = require("../middleware/auth");
 const { Genre, validateGenres } = require("../models/genre_model");
 
 genreRoutes.get("/", async (req, res) => {
-  throw new Error("failed to load");
   const genre = await Genre.find();
   res.send(genre);
 });
