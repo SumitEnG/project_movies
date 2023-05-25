@@ -7,7 +7,7 @@ function error(err, req, res, next) {
   //     stack: err.stack,
   //     metadata: err, // Put what you like as meta
   //   });
-  res.status(500).send("something failed");
+  res.status(500).send(err.message);
 }
 
 module.exports = error;

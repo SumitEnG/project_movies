@@ -29,7 +29,7 @@ function validateCustomer(customer) {
     name: Joi.string().required().min(4).max(20),
     phone: Joi.string().required().min(10).max(12),
   });
-
+  console.log(customer);
   return schema.validate(customer);
 }
 

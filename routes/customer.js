@@ -16,6 +16,7 @@ customerRoutes.get(
 customerRoutes.post(
   "/",
   asyncMiddleware(async (req, res) => {
+    console.log(req.body);
     const result = validateCustomer(req.body);
     if (result.error) {
       res.status(400).send(result.error.details[0].message);
